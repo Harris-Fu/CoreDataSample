@@ -70,7 +70,7 @@
 
 -(void) insertNewData {
 
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newPersonData;
     newPersonData = [NSEntityDescription insertNewObjectForEntityForName:@"Persons" inManagedObjectContext:context];
     
@@ -97,7 +97,7 @@
 
 -(void) findData {
 
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Persons" inManagedObjectContext:context];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@)",myNameTextField.text];
     
@@ -120,7 +120,7 @@
 
 -(void) updateData {
 
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Persons" inManagedObjectContext:context];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@)",myNameTextField.text];
     
@@ -146,7 +146,7 @@
 
 -(void) deleteData {
     
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Persons" inManagedObjectContext:context];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@)",myNameTextField.text];
     
